@@ -1,0 +1,52 @@
+{
+  "name": "ExpenseVoucher",
+  "base": "PersistedModel",
+  "strict": false,
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "expenseHead": {
+      "type": "string",
+      "required": true
+    },
+    "expenseDescription": {
+      "type": "string",
+      "required": true
+    },
+    "approverNote": {
+      "type": "string"
+    },
+    "state": {
+      "type": "string",
+      "required": true
+    },
+    "expenseDate": {
+      "type": "date",
+      "required": true
+    },
+    "submitDate": {
+      "type": "date",
+      "required": false,
+      "comments": ""
+    },
+    "approvedDate": {
+      "type": "date",
+      "required": false
+    },
+    "approver": {
+      "type": "string",
+      "required": false,
+      "index": false
+    },
+    "submitter": {
+      "type": "string",
+      "required": false
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

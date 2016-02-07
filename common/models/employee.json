@@ -1,0 +1,34 @@
+{
+  "name": "Employee",
+  "base": "PersistedModel",
+  "strict": false,
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "lastName": {
+      "type": "string",
+      "required": true
+    },
+    "code": {
+      "type": "string",
+      "required": true,
+      "comments": "Unique code for employee"
+    },
+    "isApprover": {
+      "type": "boolean",
+      "id": false,
+      "required": false,
+      "comments": "Can this employee approve an expense?"
+    },
+    "firstName": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
