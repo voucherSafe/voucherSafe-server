@@ -1,13 +1,10 @@
 # Expense Vouchers
-## A Paperless employee expense settlements system for SMEs
+## A Paperless employee expense settlements system
 ### {Powered by StrongLoop}
 
 # Setup
 * Download and Install [MongoDB](https://www.mongodb.org/)
 * [Get Started](https://strongloop.com/get-started/) with [StrongLoop](https://strongloop.com/)
-```
-npm install -g strongloop
-```
 
 # Development
 * Clone this repository
