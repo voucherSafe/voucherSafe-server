@@ -69,7 +69,7 @@ module.exports = function(app) {
        }
        var Employee = app.models.employee;
        console.log('Searching employee collection for user ' + userId  + ' and for organization ' + organisation.id);
-       Employee.findOne({_id : userId}, function (err, employee) {
+       Employee.findOne({where: {and: [{employeeID : userId},{organisationId : organisation.id}]}}, function (err, employee) {
          console.log('Got employee %j', employee );
          if (err || !employee) {
            return reject(err);
