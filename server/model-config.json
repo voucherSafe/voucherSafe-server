@@ -32,13 +32,13 @@
     "dataSource": "MongoDB",
     "public": false
   },
-  "ExpenseVoucher": {
+  "organisation": {
     "dataSource": "MongoDB",
     "public": true,
     "$promise": {},
     "$resolved": true
   },
-  "Employee": {
+  "employee": {
     "dataSource": "MongoDB",
     "public": true,
     "$promise": {},
