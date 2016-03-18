@@ -45,9 +45,20 @@ module.exports = function(app) {
        }
        cb(null, false);
      }
+     function isEmployeeAManagerForOrganization(userId, organisationId){
+       var Employee = app.models.employee;
+       console.log('Searching employee collection for user ' + userId  + ' and for organization ' + organisationId);
+       Employee.findOne({where: {and: [{employeeID : userId},{organisationId : organisationId}]}}, function (err, employee) {
+         console.log('Got employee %j', employee );
+         if (err || !employee) {
+           return reject(err);
+         }
+         cb(null, employee.isManager);
+       });
+     }
 
-     if (context.modelName !== 'organisation') {
-       // the target model is not employee
+     if ((context.modelName !== 'organisation') && (context.modelName !== 'voucher')) {
+       // the target model is not organization or voucher
        return reject();
      }
      var userId = context.accessToken.userId;
@@ -63,21 +74,27 @@ module.exports = function(app) {
        return reject();
      }
 
-     context.model.findById(context.modelId, function (err, organisation) {
-       if (err || !organisation) {
-         reject(err);
-       }
-       var Employee = app.models.employee;
-       console.log('Searching employee collection for user ' + userId  + ' and for organization ' + organisation.id);
-       Employee.findOne({where: {and: [{employeeID : userId},{organisationId : organisation.id}]}}, function (err, employee) {
-         console.log('Got employee %j', employee );
-         if (err || !employee) {
-           return reject(err);
-         }
-         cb(null, employee.isManager);
-       });
+     switch(context.modelName){
+       case 'organisation':
+         context.model.findById(context.modelId, function (err, organisation) {
+           if (err || (organisation === null)) {
+             reject(err);
+           }
+           isEmployeeAManagerForOrganization(userId, organisation.id)
+         });
+         break;
+       case 'voucher':
+         context.model.findById(context.modelId, function(err, voucher) {
+           if (err || voucher === null) {
+             reject(err);
+           }
+           isEmployeeAManagerForOrganization(userId, voucher.organisationId);
+         });
+         break;
+       default :
+         reject("Unknown model");
+     }
 
-     });
    });
 
 };

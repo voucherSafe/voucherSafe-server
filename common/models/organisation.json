@@ -21,6 +21,11 @@
       "type": "hasMany",
       "model": "employee",
       "foreignKey": ""
+    },
+    "vouchers": {
+      "type": "hasMany",
+      "model": "voucher",
+      "foreignKey": ""
     }
   },
   "acls": [

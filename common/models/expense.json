@@ -1,0 +1,27 @@
+{
+  "name": "expense",
+  "base": "PersistedModel",
+  "strict": false,
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "HeadofAccount": {
+      "type": "string"
+    },
+    "Amount": {
+      "type": "object"
+    },
+    "Date": {
+      "type": "date"
+    },
+    "Particulars": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

@@ -43,5 +43,17 @@
     "public": true,
     "$promise": {},
     "$resolved": true
+  },
+  "voucher": {
+    "dataSource": "MongoDB",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "expense": {
+    "dataSource": "MongoDB",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
   }
 }
