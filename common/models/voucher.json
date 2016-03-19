@@ -71,17 +71,17 @@
       "permission": "ALLOW"
     },
     {
-      "accessType": "EXECUTE",
-      "principalType": "ROLE",
-      "principalId": "$authenticated",
-      "permission": "ALLOW",
-      "property": "create"
-    },
-    {
       "accessType": "*",
       "principalType": "ROLE",
       "principalId": "manager",
       "permission": "ALLOW"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "employee",
+      "permission": "ALLOW",
+      "property": "create"
     }
   ],
   "methods": {}

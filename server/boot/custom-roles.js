@@ -38,6 +38,7 @@ module.exports = function(app) {
 
   //Register the Manager role
   var Role = app.models.Role;
+
    Role.registerResolver('manager', function(role, context, cb) {
      function reject(err) {
        if (err) {
@@ -50,7 +51,7 @@ module.exports = function(app) {
        console.log('Searching employee collection for user ' + userId  + ' and for organization ' + organisationId);
        Employee.findOne({where: {and: [{employeeID : userId},{organisationId : organisationId}]}}, function (err, employee) {
          console.log('Got employee %j', employee );
-         if (err || !employee) {
+         if (err || (employee === null)) {
            return reject(err);
          }
          cb(null, employee.isManager);
@@ -96,5 +97,42 @@ module.exports = function(app) {
      }
 
    });
+
+  //For the employee role to create vouchers
+  Role.registerResolver('employee', function(role, context, cb) {
+    function reject(err) {
+      if (err) {
+        return cb(err);
+      }
+      cb(null, false);
+    }
+    function isUserEmployeeOfOrganization(userId, organisationId){
+      var Employee = app.models.employee;
+      console.log('Searching employee collection for user ' + userId  + ' and for organization ' + organisationId);
+      Employee.count({employeeID : userId},{organisationId : organisationId}, function (err, count) {
+        console.log('Got employee count %j', count );
+        if (err) {
+          return reject(err);
+        }
+        cb(null, count > 0);
+      });
+    }
+
+    if (context.modelName !== 'organisation') {
+      // the target model is not organization
+      return reject();
+    }
+    var userId = context.accessToken.userId;
+    if (!userId) {
+      return reject(); // do not allow anonymous users
+    }
+    console.log('The accessToken in context %j', context.accessToken );
+
+    console.log('user id is ' + userId);
+    console.log('Context modelId is %j', context.modelId);
+    //Access to the level of a single organisation
+
+      isUserEmployeeOfOrganization(userId, context.modelId);
+  });
 
 };

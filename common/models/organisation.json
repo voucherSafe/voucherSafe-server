@@ -46,6 +46,13 @@
       "principalType": "ROLE",
       "principalId": "administrator",
       "permission": "ALLOW"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "employee",
+      "permission": "ALLOW",
+      "property": "__create__vouchers"
     }
   ],
   "methods": {}
