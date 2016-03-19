@@ -53,6 +53,13 @@
       "principalId": "employee",
       "permission": "ALLOW",
       "property": "__create__vouchers"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "employee",
+      "permission": "ALLOW",
+      "property": "findById"
     }
   ],
   "methods": {}
