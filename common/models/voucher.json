@@ -10,10 +10,6 @@
     "Date": {
       "type": "string"
     },
-    "Amount": {
-      "type": "object",
-      "id": false
-    },
     "State": {
       "type": "string"
     },
@@ -24,6 +20,10 @@
     },
     "Approver": {
       "type": "string"
+    },
+    "Amount": {
+      "type": "number",
+      "id": false
     }
   },
   "validations": [],
