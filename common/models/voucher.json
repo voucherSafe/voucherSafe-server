@@ -7,9 +7,6 @@
     "validateUpsert": true
   },
   "properties": {
-    "Date": {
-      "type": "string"
-    },
     "State": {
       "type": "string"
     },
@@ -24,6 +21,12 @@
     "Amount": {
       "type": "number",
       "id": false
+    },
+    "Date": {
+      "type": "string"
+    },
+    "ModifiedDate": {
+      "type": "string"
     }
   },
   "validations": [],

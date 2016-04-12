@@ -55,5 +55,11 @@
     "public": true,
     "$promise": {},
     "$resolved": true
+  },
+  "sandbox": {
+    "dataSource": "MongoDB",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
   }
 }

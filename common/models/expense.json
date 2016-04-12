@@ -13,10 +13,13 @@
     "Amount": {
       "type": "object"
     },
-    "Date": {
-      "type": "date"
-    },
     "Particulars": {
+      "type": "string"
+    },
+    "Date": {
+      "type": "string"
+    },
+    "ModifiedDate": {
       "type": "string"
     }
   },
