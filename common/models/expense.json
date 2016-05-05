@@ -16,10 +16,7 @@
     "Particulars": {
       "type": "string"
     },
-    "Date": {
-      "type": "string"
-    },
-    "ModifiedDate": {
+    "BillNo": {
       "type": "string"
     }
   },

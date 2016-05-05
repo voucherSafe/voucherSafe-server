@@ -1,20 +1,18 @@
 module.exports = function(Voucher) {
-  /*function getFinancialYrFromDate(date){
-    *//*
-    If Jan, Feb, Mar - "date.year-1" + "-" + "date.year"
-    Else - "date.year" + "-" + "date.year+1"
-     *//*
-    return 1;
-
-  }
-  Voucher.observe('before save', function generateVoucherNumber(ctx, next){
-    if (ctx.instance) {
-      //Vr No already generated
+  Voucher.observe('before save', function(ctx, next) {
+    console.log('> before save triggered:', ctx.Model.modelName, ctx.instance ||
+            ctx.data);
+    console.log('isNewInstance?', ctx.isNewInstance !== undefined);
+    var isNewInstance = (ctx.isNewInstance !== undefined);
+    if (isNewInstance === true){
+      Voucher.count(function(err, result){
+        console.log('Count is %j', result);
+        ctx.instance.VrNo = result + 1;
+        next();
+      });
+    }else{
+      //Not a new instance. No need to create a voucher number
       next();
-    } else {
-      var FY = getFinancialYrFromDate(ctx.data.Date);
-      ctx.data.VrNo = 123;
     }
-    next();
-  });*/
+  });
 };

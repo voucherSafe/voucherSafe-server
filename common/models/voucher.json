@@ -27,6 +27,9 @@
     },
     "ModifiedDate": {
       "type": "string"
+    },
+    "Narration": {
+      "type": "string"
     }
   },
   "validations": [],
