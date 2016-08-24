@@ -1,5 +1,5 @@
 # Expense Vouchers
-## A Paperless employee expense settlements system
+## A Paperless employee expense settlements system for use for S&M Enterprises
 ### {Powered by StrongLoop}
 
 # Setup
