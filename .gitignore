@@ -21,3 +21,4 @@ npm-debug.log
 .jshintignore
 .jshintrc
 .yo-rc.json
+server/private/
