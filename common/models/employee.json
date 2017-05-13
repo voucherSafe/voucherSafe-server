@@ -26,6 +26,11 @@
     "address": {
       "type": "string",
       "required": false
+    },
+    "ExpenseHeads": {
+      "type": [
+        "string"
+      ]
     }
   },
   "validations": [],
@@ -76,6 +81,27 @@
       "principalId": "$owner",
       "permission": "ALLOW",
       "property": "__updateById__vouchers"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW",
+      "property": "__get__overtimes"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW",
+      "property": "__create__overtimes"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW",
+      "property": "__updateById__overtimes"
     }
   ],
   "methods": {}
