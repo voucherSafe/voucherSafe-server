@@ -56,10 +56,14 @@
     "$promise": {},
     "$resolved": true
   },
-  "sandbox": {
+  "overtime": {
     "dataSource": "MongoDB",
     "public": true,
     "$promise": {},
     "$resolved": true
+  },
+  "department": {
+    "dataSource": "MongoDB",
+    "public": true
   }
 }

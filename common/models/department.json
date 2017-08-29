@@ -1,0 +1,26 @@
+{
+  "name": "department",
+  "plural": "departments",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "default": "general"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "coordinator": {
+      "type": "hasOne",
+      "model": "employee",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

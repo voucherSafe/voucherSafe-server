@@ -31,6 +31,9 @@
       "type": [
         "string"
       ]
+    },
+    "dutyHours": {
+      "type": "object"
     }
   },
   "validations": [],
@@ -38,6 +41,16 @@
     "vouchers": {
       "type": "hasMany",
       "model": "voucher",
+      "foreignKey": ""
+    },
+    "departments": {
+      "type": "hasOne",
+      "model": "department",
+      "foreignKey": ""
+    },
+    "overtimes": {
+      "type": "hasMany",
+      "model": "overtime",
       "foreignKey": ""
     }
   },

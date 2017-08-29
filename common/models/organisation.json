@@ -34,6 +34,16 @@
       "type": "hasMany",
       "model": "voucher",
       "foreignKey": ""
+    },
+    "overtimes": {
+      "type": "hasMany",
+      "model": "overtime",
+      "foreignKey": ""
+    },
+    "departments": {
+      "type": "hasMany",
+      "model": "department",
+      "foreignKey": ""
     }
   },
   "acls": [
@@ -67,7 +77,21 @@
       "principalType": "ROLE",
       "principalId": "employee",
       "permission": "ALLOW",
+      "property": "__create__overtimes"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "employee",
+      "permission": "ALLOW",
       "property": "findById"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "employee",
+      "permission": "ALLOW",
+      "property": "find"
     }
   ],
   "methods": {}

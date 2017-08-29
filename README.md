@@ -1,5 +1,6 @@
 # Expense Vouchers
 ## A Paperless employee expense settlements system for use for S&M Enterprises
+A simple and user-friendly paperless tool to streamline petty cash expenses management and accounting for small organizations, helping to save time and energy on maintaining accounts as well as bringing all-round discipline in spending management.
 ### {Powered by StrongLoop}
 
 # Setup
