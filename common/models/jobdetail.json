@@ -1,0 +1,32 @@
+{
+  "name": "jobdetail",
+  "base": "PersistedModel",
+  "strict": false,
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "jobCardNo": {
+      "type": "string",
+      "required": true
+    },
+    "customerName": {
+      "type": "string"
+    },
+    "jobName": {
+      "type": "string"
+    },
+    "endTime": {
+      "type": "string",
+      "required": true
+    },
+    "amount": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

@@ -65,5 +65,17 @@
   "department": {
     "dataSource": "MongoDB",
     "public": true
+  },
+  "DailyProductionAndOvertimeReport": {
+    "dataSource": "MongoDB",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "jobdetail": {
+    "dataSource": "MongoDB",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
   }
 }

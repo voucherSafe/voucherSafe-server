@@ -52,6 +52,11 @@
       "type": "hasMany",
       "model": "overtime",
       "foreignKey": ""
+    },
+    "dailyProductionAndOvertimeReports": {
+      "type": "hasMany",
+      "model": "DailyProductionAndOvertimeReport",
+      "foreignKey": ""
     }
   },
   "acls": [
@@ -115,6 +120,27 @@
       "principalId": "$owner",
       "permission": "ALLOW",
       "property": "__updateById__overtimes"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW",
+      "property": "__create__dailyProductionAndOvertimeReports"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW",
+      "property": "__get__dailyProductionAndOvertimeReports"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW",
+      "property": "__updateById__dailyProductionAndOvertimeReports"
     }
   ],
   "methods": {}

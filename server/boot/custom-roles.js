@@ -58,8 +58,9 @@ module.exports = function(app) {
        });
      }
 
-     if ((context.modelName !== 'organisation') && (context.modelName !== 'voucher')) {
-       // the target model is not organization or voucher
+     if ((context.modelName !== 'organisation') && (context.modelName !== 'voucher')
+         && (context.modelName !== 'DailyProductionAndOvertimeReport')) {
+       // the target model is not organization, voucher or daily production report
        return reject();
      }
      var userId = context.accessToken.userId;
@@ -70,6 +71,7 @@ module.exports = function(app) {
 
      console.log('user id is ' + userId);
      console.log('Context modelId is %j', context.modelId);
+     console.log('Context model name is ' + context.modelName);
      //Access to the level of a single organisation
      if (context.modelId === undefined){
        return reject();
@@ -85,6 +87,14 @@ module.exports = function(app) {
          });
          break;
        case 'voucher':
+         context.model.findById(context.modelId, function(err, voucher) {
+           if (err || voucher === null) {
+             reject(err);
+           }
+           isEmployeeAManagerForOrganization(userId, voucher.organisationId);
+         });
+         break;
+       case 'DailyProductionAndOvertimeReport':
          context.model.findById(context.modelId, function(err, voucher) {
            if (err || voucher === null) {
              reject(err);

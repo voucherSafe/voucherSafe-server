@@ -21,6 +21,9 @@
     },
     "properties": {
       "type": "object"
+    },
+    "ourtimeEnabled": {
+      "type": "boolean"
     }
   },
   "validations": [],
@@ -43,6 +46,11 @@
     "departments": {
       "type": "hasMany",
       "model": "department",
+      "foreignKey": ""
+    },
+    "dailyProductionAndOvertimeReports": {
+      "type": "hasMany",
+      "model": "DailyProductionAndOvertimeReport",
       "foreignKey": ""
     }
   },
@@ -78,6 +86,13 @@
       "principalId": "employee",
       "permission": "ALLOW",
       "property": "__create__overtimes"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "employee",
+      "permission": "ALLOW",
+      "property": "__create__dailyProductionAndOvertimeReports"
     },
     {
       "accessType": "EXECUTE",
